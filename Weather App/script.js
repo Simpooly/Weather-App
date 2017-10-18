@@ -27,16 +27,23 @@ function getData(){
     temp = data.main.temp;
     weather = data.weather[0].main;
 
-    //console.log(we);
     $(".temp").html(temp);
     $(".weather").html(weather);
-    //$(".weather").html(JSON.stringify(json));
+
+    //$("#icon").attr('src', icon);
+    //document.getElementById("icon").src= icon;
+
+  
   });
 }
 getData();
 
 
-
+// toggle button text
+   $("#tweet").click(function () {
+       var text = $('#tweet').text();
+       $(this).text(text == "°F" ? "°C" : "°F");
+    });
 
 
 
@@ -45,15 +52,8 @@ getData();
 });
 
 
-
-
-// $("#tweet").on("click", function(){
-  //    // Only change code below this line.
-    //  $.getJSON(url, function(json) {
-  //$(".weather").html(JSON.stringify(json));
-//});
-
-
+//Fahrenheit to Celsius : (°F − 32) ÷ 1.8 = °C 
+//Celsius to Fahrenheit : (°C × 1.8) + 32 = °F
 //$("#tweet").on("click", function(){
   //     
     //var qString = $(".quote").html(quote);
